@@ -1,0 +1,13 @@
+@import url('Variables.css');
+
+.area{
+    font-size:24px;
+    font-weight: 700;
+    color: var(--black)
+}
+
+.numStays{
+    font-size:14px;
+    color: var(--dark-grey);
+    font-weight: 500;
+}

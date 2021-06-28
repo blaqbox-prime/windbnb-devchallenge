@@ -11,7 +11,7 @@ export default function Stay({title, superHost, type, beds, photo, rating}) {
             <div className="d-flex align-items-center">
             {superHost && <div className="stay__super_host">super host</div>}
             <div className="stay__subtitle">
-            { `${type}${beds && `, ${beds} beds`}`  }
+            { `${type}${ beds !== null ? `, ${beds} beds` : ""}`  }
             </div>
             </div>
             {/* Right */}

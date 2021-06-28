@@ -1,25 +1,21 @@
-:root{
-    --width:395px;
-    --primary: #EB5757;
-    --light-grey:#828282;
-    --dark-grey:#4F4F4F;
-    --black:#333333;
-
-
-}
+@import url('Variables.css');
 
 .stay__container{
     font-family: 'Montserrat', sans-serif;
-    width: var(--width);
+    max-width: var(--width);
+    min-width: var(--min-width);
 }
 
 .stay__image{
     
-    width: var(--width);
-    height: 269px;
+    max-width: var(--width);
+    max-height: 269px;
+    min-height: 238.35px;
+    width: 100%;
     object-position: center;
     object-fit: cover;
     border-radius: 24px;
+    cursor: pointer;
 }
 
 .stay__super_host{
