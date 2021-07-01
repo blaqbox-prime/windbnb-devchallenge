@@ -5,11 +5,14 @@ import Header from './Header';
 import Stay from './Stay'
 import './App.css'
 import Listings from './Listings';
+import FilterProvider from '../contexts/FilterContext';
+import Navbar from './Navbar';
+import {useFilter} from '../contexts/FilterContext'
+import FilterForm from './FilterForm';
 
  function App() {
   //Hold all Stays in state.
-  const [Stays, setStays] = useState([])
-  const [filteredCity, setFilteredCity] = useState();
+  const { filteredStays, fetchStays} = useFilter()
   //check json and load it
 
  useEffect(() => {
@@ -18,15 +21,16 @@ import Listings from './Listings';
     
   }, [])
 
-  function fetchStays() {
-    
-    fetch("stays.json").then(res => res.json()).then(json => {setStays(json)})
-  }
+
 
   return (
+    
     <Container className="">
-      <Listings stays={Stays}/>
+      <FilterForm stays={filteredStays}/>
+      <Navbar/>
+      <Listings stays={filteredStays}/>
     </Container>
+    
   );
 }
 

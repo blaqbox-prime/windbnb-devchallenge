@@ -11,3 +11,10 @@
     color: var(--dark-grey);
     font-weight: 500;
 }
+
+.listing-grid{
+    display:grid;
+    justify-content:space-between;
+    align-items:center;
+    grid-template-columns: repeat(3,1fr);
+}

@@ -5,7 +5,7 @@ import StarRateIcon from '@material-ui/icons/StarRate'
 export default function Stay({title, superHost, type, beds, photo, rating}) {
     return (
         <div className="stay__container">
-            <img className="stay__image mb-2" src={photo} alt={title} />
+            <img className="stay__image mb-3" src={photo} alt={title} />
             <div className="d-flex align-items-center detail-row justify-space-between">
             {/* Left */}
             <div className="d-flex align-items-center">
@@ -19,7 +19,7 @@ export default function Stay({title, superHost, type, beds, photo, rating}) {
                     <StarRateIcon style={{color:"#EB5757", marginRight:"5px"}}/>
                     {rating}</div>
             </div>
-            <div className="stay__title mt-1">
+            <div className="stay__title mt-2">
                 {title}
             </div>
         </div>
