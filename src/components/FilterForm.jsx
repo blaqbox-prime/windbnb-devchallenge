@@ -1,16 +1,15 @@
-import { Button, Container } from "@material-ui/core";
 import React, { useState } from "react";
 import SearchIcon from '@material-ui/icons/Search';
-import { Col, Row } from "react-bootstrap";
 import "./FilterForm.css";
 import { useFilter } from "../contexts/FilterContext";
 import RoomIcon from '@material-ui/icons/Room';
-import { Room } from "@material-ui/icons";
+import { Container } from "react-bootstrap";
+
 
 export default function FilterForm({ stays }) {
   const [activeFilter, setActiveFilter] = useState("");
   const [showLocations, setShowLocations] = useState(true);
-  const [showGuests, setShowGuests] = useState(false);
+  // const [showGuests, setShowGuests] = useState(false);
 
   const {
     location,
@@ -35,8 +34,7 @@ export default function FilterForm({ stays }) {
     }
 
     if(e.target.id !== 'LocationContainer'){
-      const currentState = showLocations;
-      setShowGuests(!currentState)
+      
     }
 
   }
@@ -56,7 +54,6 @@ export default function FilterForm({ stays }) {
     color: "#BDBDBD",
   };
 
-  let guestOptionsClasses = [];
 
   const Handlefilter = () => {
     filter();
@@ -64,10 +61,10 @@ export default function FilterForm({ stays }) {
 
   }
 
-  const ActiveFilterStyle = {
-    border: "2px solid #BDBDBD",
-    borderRadius: "1px",
-  };
+  // const ActiveFilterStyle = {
+  //   border: "2px solid #BDBDBD",
+  //   borderRadius: "1px",
+  // };
 
   return (
     <div className={`filter-form-container-overlay ${!showFilterForm && 'hide-form'}`}>
