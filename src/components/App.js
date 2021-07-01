@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useEffect } from 'react'
+import { Container } from 'react-bootstrap';
 import './App.css';
-import Header from './Header';
-import Stay from './Stay'
 import './App.css'
 import Listings from './Listings';
-import FilterProvider from '../contexts/FilterContext';
 import Navbar from './Navbar';
 import {useFilter} from '../contexts/FilterContext'
 import FilterForm from './FilterForm';
@@ -19,7 +16,7 @@ import FilterForm from './FilterForm';
       
     fetchStays();
     
-  }, [])
+  },)
 
 
 
