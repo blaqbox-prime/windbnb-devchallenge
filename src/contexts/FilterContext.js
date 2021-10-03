@@ -28,10 +28,10 @@ export default function FilterProvider({children}) {
         let newStays = stays.filter((stay) => {return stay.city === city && stay.maxGuests >= numGuests})
         if (newStays.length > 0){
             setFilteredStays(newStays);
-            return;
+            
         }
         setFilteredStays([]);
-        return;
+        
     }
 
     function fetchStays() {
