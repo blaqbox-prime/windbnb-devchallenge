@@ -8,7 +8,7 @@ export default function Navbar() {
 
     return (
         <nav className="navbar justify-content-between align-items-center mt-4" style={{marginBottom:'70px'}}>
-            <img src="images/logo.png" alt="windbnb logo" />
+            <a href="#"><img src="images/logo.png" alt="windbnb logo" /></a>
             <div className="filterContainer" onClick={() => toggleForm()}>
                 <div id="location">{location ? location : 'Filter location' }</div>
                 <div className="filterSeperator"></div>
