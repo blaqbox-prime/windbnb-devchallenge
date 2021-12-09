@@ -142,6 +142,13 @@ li{
     margin: 0 15px;
 }
 
+.form-close{
+    position: relative;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+}
+
 @keyframes show{
     from {
         opacity: 0;

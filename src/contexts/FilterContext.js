@@ -27,15 +27,26 @@ export default function FilterProvider({children}) {
         //check if any exits according to filter
         let newStays = stays.filter((stay) => {return stay.city === city && stay.maxGuests >= numGuests})
         if (newStays.length > 0){
+
             setFilteredStays(newStays);
 
+        }else{
+
+            setFilteredStays([]);
         }
-        setFilteredStays([]);
+    }
+
+    function reset(){
+        if(stays.length == 0){
+            fetchStays();
+        }else{
+            setFilteredStays(stays);
+        }
     }
 
     function fetchStays() {
     
-        fetch("stays.json").then(res => res.json()).then(json => {
+        fetch("/stays.json").then(res => res.json()).then(json => {
           setFilteredStays(json);
           setStays(json)})
       }
@@ -46,7 +57,7 @@ export default function FilterProvider({children}) {
 
     function filterCity(city){
         setCity(city);
-        // setFilteredStays(stays.filter((stay)=> stay.city === city));
+        setFilteredStays(stays.filter((stay)=> stay.city === city));
     }
 
     function getLocations(){
@@ -110,7 +121,7 @@ export default function FilterProvider({children}) {
       getLocations,
       fetchStays,
       filter,
-      
+      reset
     }
     return (
         <FilterContext.Provider value={value}>

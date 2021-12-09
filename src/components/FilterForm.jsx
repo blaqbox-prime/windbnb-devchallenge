@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import "./FilterForm.css";
 import { useFilter } from "../contexts/FilterContext";
 import RoomIcon from '@material-ui/icons/Room';
-import { Room } from "@material-ui/icons";
+import { Close } from "@material-ui/icons";
 
 export default function FilterForm({ stays }) {
   const [activeFilter, setActiveFilter] = useState("");
@@ -23,7 +23,8 @@ export default function FilterForm({ stays }) {
     getLocations,
     filter,
     showFilterForm,
-    toggleForm
+    toggleForm,
+    reset,
   } = useFilter();
 
   function ActivateFilter(e) {
@@ -72,6 +73,7 @@ export default function FilterForm({ stays }) {
   return (
     <div className={`filter-form-container-overlay ${!showFilterForm && 'hide-form'}`}>
       <div className="filter-form-container">
+        <Close onClick={toggleForm} className="form-close"/>
         <Container className="filter-form">
           <div className="filters">
             <div id="LocationContainer" onClick={(e) => ActivateFilter(e)} >
